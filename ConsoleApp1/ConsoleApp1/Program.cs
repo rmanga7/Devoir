@@ -29,6 +29,10 @@ namespace ConsoleApp1
 
 
 
+            /// <summary>
+            /// Listen to Ctrl-C event.
+            /// </summary>
+            /// <param name="m"></param>
             protected override void WndProc(ref Message m)
             {
                 // Listen for operating system messages
