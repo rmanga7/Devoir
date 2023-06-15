@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// Program installed on PC1
+    /// </summary>
     internal class Program
     {
         const string SERVER_IP_ADDRESS = "20.16.107.52";
@@ -45,7 +48,7 @@ namespace ConsoleApp1
                     if (!String.IsNullOrEmpty(data))
                     {
                         Console.WriteLine("Clipboard Content: " + data);
-                        SendData(data);
+                        SendText(data);
                     }
                     else
                     {
@@ -63,7 +66,7 @@ namespace ConsoleApp1
 
 
 
-            private void SendData(string data)
+            private void SendText(string data)
             {
                 TcpClient client = null;
                 NetworkStream stream = null;
@@ -119,7 +122,7 @@ namespace ConsoleApp1
 
         private static void Main(string[] args)
         {
-            //starts a message loop on current thread
+            // starts a message loop on current thread
             Console.WriteLine("Ctrl C listener");
             Application.Run(new NotificationForm());
         }

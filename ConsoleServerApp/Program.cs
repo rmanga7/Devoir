@@ -5,8 +5,15 @@ using System.Text;
 
 namespace ConsoleServerApp
 {
+    /// <summary>
+    /// Program installed on PC server.
+    /// </summary>
     internal class Program
     {
+        const string DEST_IP_ADDRESS = "PC2_IP_address";
+        const int DEST_PORT = 13;
+
+
         static void Main(string[] args)
         {
             while (true)
@@ -19,6 +26,8 @@ namespace ConsoleServerApp
             }
            
         }
+
+
 
         private static string GetIncomingData()
         {
@@ -48,6 +57,8 @@ namespace ConsoleServerApp
             return dataReceived;
         }
 
+
+
         private static void SendReceivedData(string data)
         {
             TcpClient client = null;
@@ -55,10 +66,10 @@ namespace ConsoleServerApp
 
             try
             {
-                Console.WriteLine($"Sending data to server");
+                Console.WriteLine($"Sending data to server to PC2");
 
                 client = new TcpClient();
-                client.Connect("PC2_IP_address", 13);
+                client.Connect(DEST_IP_ADDRESS, DEST_PORT);
                 stream = client.GetStream();
 
                 byte[] buffer = Encoding.ASCII.GetBytes(data);

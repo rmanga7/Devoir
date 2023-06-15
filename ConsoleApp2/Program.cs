@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace ConsoleApp2
 {
+    /// <summary>
+    /// Program installed on PC2.
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)
@@ -19,6 +22,8 @@ namespace ConsoleApp2
                 Console.ReadLine();
             }
         }
+
+
 
         private static string GetIncomingData()
         {
@@ -47,6 +52,8 @@ namespace ConsoleApp2
 
             return dataReceived;
         }
+
+
 
         private static void SendDataToClipboard(string data)
         {
